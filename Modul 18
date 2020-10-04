@@ -1,0 +1,21 @@
+# Задание: Вам нужно создать текстовый файл. Записать в файл текст,который Вы захотите. 
+# Написать код который будет принимать на вход путь до вашего файла и  выводить на экран  в алфавитном порядке буквы и их количество в этом файле. 
+
+
+filePath = input("Введите путь до файла: ")
+text = open(filePath)
+
+letters = {}
+
+for line in text:
+    line = line.replace(" ", "").replace("\n","")
+    for char in sorted(line):
+        char = char.lower()
+        if char in letters:
+            letters[char] += 1
+        else:
+            letters[char] = 1
+
+print(letters)
+
+
